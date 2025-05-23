@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web to lead form</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="script.js"></script>
   </head>
   <body>
@@ -14,8 +15,17 @@
       method="POST"
       onsubmit="beforesubmit()"
     >
+      <input
+        type="hidden"
+        name="captcha_settings"
+        value='{"keyname":"WebToLeadForm","fallback":"true","orgId":"00DdM00000Mtwua","ts":""}'
+      />
       <input type="hidden" name="oid" value="00DdM00000Mtwua" />
-      <input type="hidden" name="retURL" value="https://nehadabi14.github.io/miniproject/thanks.html" />
+      <input
+        type="hidden"
+        name="retURL"
+        value="https://nehadabi14.github.io/miniproject/thanks.html"
+      />
       <input type="hidden" name="Lead_Date__c" class="outputdate" />
 
       <label for="first_name">First Name</label
@@ -60,6 +70,11 @@
       ><br /> -->
 
       <input type="submit" name="submit" class="submit" />
+      <div
+        class="g-recaptcha"
+        data-sitekey="6LdDk0YrAAAAAOMU-7nFhJKevEdqWs094kNfrMAs"
+      ></div>
+      <br />
     </form>
   </body>
 </html>
